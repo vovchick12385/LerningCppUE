@@ -36,12 +36,12 @@ public:
 		return (x * x + y * y + z * z) > (rhs.x * rhs.x + rhs.y * rhs.y + rhs.z * rhs.z);
 	}
 
-	Vector& operator*(float m) const
+	Vector operator*(float m) const
 	{
 		Vector out(x * m, y * m, z * m);
 		return out;
 	}
-	Vector& operator-(const Vector& rhs) const
+	Vector operator-(const Vector& rhs) const
 	{
 		Vector out(x - rhs.x, y - rhs.y, z - rhs.z);
 		return out;
