@@ -1,21 +1,18 @@
 #include "Vector.h"
 #include "Collection.h"
+#include "Player.h"
+#include "Item.h"
 
 int main()
 {
-	std::vector<std::vector<int>> in{
-		{1,2,3,4},
-		{2,5,6,8},
-		{5,1,2}
-	};
-	std::vector<std::vector<int>> i1n{
-		{5,1},
-		{2,5},
-		{3,3,3}
-	};
-	Collection newCol(in);
-	Collection newCol1(newCol);
-	Collection newCol2(i1n);
-	newCol1 = newCol2;
+	Player* newPlayerA = new Player("Vasya", Vector(1,0,0));
+	Player* newPlayerB = new Player("Petya", Vector(1,0,0));
+	Item* newItem = new Item("Sword");
+	
+	newPlayerA->SetNewItem(newItem);
+	PlayersParty PlayersAB;
+	PlayersAB.AddPlayerToPerty(newPlayerA);
+	PlayersAB.AddPlayerToPerty(newPlayerB);
+	PlayersAB.ShowAllPlayerInfo();
 	return 0;
 }
